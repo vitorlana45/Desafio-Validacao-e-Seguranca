@@ -20,7 +20,8 @@ public class CityController {
 
     @GetMapping
     public ResponseEntity<List<CityDTO>> findAll() {
-        List<CityDTO> listCity = service.findAllSortedByName();
+        List<CityDTO> listCity = service.findAllSortedByName()
+                ;
         return ResponseEntity.ok().body(listCity);
     }
 
