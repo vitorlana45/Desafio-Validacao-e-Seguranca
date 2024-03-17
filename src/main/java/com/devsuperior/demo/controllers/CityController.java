@@ -1,10 +1,10 @@
 package com.devsuperior.demo.controllers;
 
 import com.devsuperior.demo.dto.CityDTO;
-import com.devsuperior.demo.entities.City;
 import com.devsuperior.demo.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -20,8 +20,7 @@ public class CityController {
 
     @GetMapping
     public ResponseEntity<List<CityDTO>> findAll() {
-        List<CityDTO> listCity = service.findAllSortedByName()
-                ;
+        List<CityDTO> listCity = service.findAllSortedByName();
         return ResponseEntity.ok().body(listCity);
     }
 

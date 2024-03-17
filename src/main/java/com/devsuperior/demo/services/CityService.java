@@ -5,6 +5,9 @@ import com.devsuperior.demo.entities.City;
 import com.devsuperior.demo.repositories.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +15,7 @@ import java.util.List;
 
 
 @Service
-public class CityService {
+public class CityService  {
 
     @Autowired
     private CityRepository repository;
@@ -35,6 +38,4 @@ public class CityService {
         city.setName(cityDTO.getName());
         return city;
     }
-
-
 }
