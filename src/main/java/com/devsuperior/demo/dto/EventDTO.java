@@ -3,10 +3,13 @@ package com.devsuperior.demo.dto;
 import java.time.LocalDate;
 
 import com.devsuperior.demo.entities.Event;
+import jakarta.validation.constraints.NotBlank;
+
 
 public class EventDTO {
 	
 	private Long id;
+	@NotBlank(message = "Campo requerido")
 	private String name;
 	private LocalDate date;
 	private String url;
