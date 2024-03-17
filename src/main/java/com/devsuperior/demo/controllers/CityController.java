@@ -24,6 +24,7 @@ public class CityController {
         return ResponseEntity.ok().body(listCity);
     }
 
+    @PreAuthorize("hasRole('ROLE_adminUsername')")
     @PostMapping
     public ResponseEntity<CityDTO> insert(@RequestBody CityDTO cityDTO) {
         CityDTO entity = service.insert(cityDTO);
