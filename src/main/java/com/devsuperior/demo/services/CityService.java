@@ -22,5 +22,17 @@ public class CityService {
         return cityList.stream().map(list -> new CityDTO(list)).toList();
     }
 
+    public CityDTO insert(CityDTO cityDTO) {
+        City newCity = new City();
+        convertEntity(cityDTO, newCity);
+        newCity = repository.save(newCity);
+        return new CityDTO(newCity);
+    }
+
+    public City convertEntity(CityDTO cityDTO, City city) {
+        city.setName(cityDTO.getName());
+        return city;
+    }
+
 
 }
