@@ -21,7 +21,7 @@ public class TokenUtil {
 
 	@Value("${security.client-secret}")
 	private String clientSecret;
-	
+
 	public String obtainAccessToken(MockMvc mockMvc, String username, String password) throws Exception {
 
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
